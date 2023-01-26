@@ -27,6 +27,7 @@ body {
   background-color: black;
   width: 100%;
   height: 10px;
+  transition: transform 0.2s;
 }
 .nav-toggle__line--one {
   transform: rotate(50deg);
@@ -36,6 +37,11 @@ body {
 }
 .nav-toggle__line--three {
   transform: rotate(-50deg);
+}
+@media (min-width: 500px) {
+  .nav-toggle {
+    display: none;
+  }
 }
 
 .nav {
@@ -48,6 +54,7 @@ body {
   height: 100vh;
   width: 125px;
   background-color: #40c7da;
+  transition: transform 0.2s;
 }
 .nav__button {
   cursor: pointer;
@@ -72,8 +79,18 @@ body {
   background-color: #293973;
 }
 
+.hamburger {
+  position: relative;
+  transform: rotate(0deg);
+}
+
 .hidden {
   transform: translate(-100%);
+}
+@media (min-width: 500px) {
+  .hidden {
+    transform: translate(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
