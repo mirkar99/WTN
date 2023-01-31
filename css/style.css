@@ -1,11 +1,14 @@
 * {
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
 body {
   display: flex;
   flex-direction: row;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 .nav-toggle {
@@ -15,10 +18,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 10px;
+  top: 20px;
   width: 40px;
   height: 40px;
-  left: 42.5px;
+  left: 30px;
   gap: 5px;
   z-index: 2;
 }
@@ -45,21 +48,20 @@ body {
 }
 
 .nav {
-  position: absolute;
-  z-index: 1;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 125px;
+  width: 100px;
   background-color: #40c7da;
   transition: transform 0.2s;
 }
 .nav__button {
   cursor: pointer;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background-position: center;
   background-size: cover;
   background-color: #40c7da;
@@ -74,9 +76,28 @@ body {
 }
 
 .section {
-  height: 100vh;
-  width: 100vw;
+  flex-grow: 1;
   background-color: #293973;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  top: 65px;
+}
+.form__text {
+  text-align: center;
+  width: 180px;
+  height: 25px;
+}
+.form__button {
+  cursor: pointer;
+  width: 100px;
+  height: 20px;
 }
 
 .hamburger {
@@ -85,11 +106,13 @@ body {
 }
 
 .hidden {
+  position: absolute;
   transform: translate(-100%);
 }
 @media (min-width: 500px) {
   .hidden {
     transform: translate(0);
+    position: relative;
   }
 }
 
