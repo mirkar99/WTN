@@ -9,11 +9,12 @@ body {
   flex-direction: row;
   min-height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .nav-toggle {
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +49,8 @@ body {
 }
 
 .nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,13 +107,13 @@ body {
 }
 
 .hidden {
-  position: absolute;
+  position: fixed;
   transform: translate(-100%);
 }
 @media (min-width: 500px) {
   .hidden {
     transform: translate(0);
-    position: relative;
+    position: sticky;
   }
 }
 
