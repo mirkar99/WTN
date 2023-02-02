@@ -32,7 +32,7 @@ const createWeatherSectionElements = async function(town){
         weatherInfoPlace.innerText=weather.location.name;
         weatherInfoImg.innerHTML=`<img src='${weather.current.condition.icon}'/>`
         weatherInfoCondition.innerText = `Condition: ${weather.current.condition.text}`
-        weatherInfoTemperature.innerText = `Temperature: ${weather.current.temp_c}°`
+        weatherInfoTemperature.innerText = `Temperature: ${weather.current.temp_c}°C | ${weather.current.temp_f}°F`
 
         weatherSection.appendChild(weatherInfo);
         weatherInfo.appendChild(weatherInfoPlace)
