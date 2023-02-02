@@ -82,6 +82,21 @@ body {
   background-color: #293973;
 }
 
+.weather-info {
+  margin-top: 10px;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.5019607843);
+}
+.weather-info__element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70px;
+}
+.weather-info__element--place {
+  width: 100%;
+}
+
 .form {
   display: flex;
   flex-direction: column;

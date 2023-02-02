@@ -1,5 +1,7 @@
 $main-color: #293973;
 $nav-color: #40c7da;
+$text-colot: #FFFFFF;
+$weather-info-color:#00000080;
 * {
     margin: 0;
     padding: 0;
@@ -76,6 +78,21 @@ body {
 .section {
     flex-grow: 1;
     background-color: $main-color;
+}
+.weather-info{
+    margin-top: 10px;
+    color: $text-colot;
+    background-color: $weather-info-color;
+    &__element{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 70px;
+        &--place{
+            width: 100%;
+        }
+
+    }
 }
 .form{
     display: flex;
