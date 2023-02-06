@@ -43,7 +43,7 @@ const createWarningDiv = function () {
     divWarning.innerText = `Is something wrong:\n 
     - Try again check if spelling is correct\n 
     - If it still happens try again later\n
-    This massage will disappear after 5 sec.`;
+    This message will disappear after 5 sec.`;
     divWarning.classList.add('warning');
     if (weatherSection.children.length === 1) {
         weatherSection.appendChild(divWarning);
