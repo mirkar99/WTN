@@ -58,11 +58,14 @@ const createWarningDiv = function () {
 const createWeatherSectionElements = async function (town) {
     try {
         const weather = await getWeather(town);
-    
+        if (weather.error) {
+            throw weather.error
+        }
         createWeatherInfoDiv(weather);
 
-    } catch{
-        
+    } catch (error) {
+        console.error(error);
+        createWarningDiv();
     }
 }
 const weatherEventListner = function () {
