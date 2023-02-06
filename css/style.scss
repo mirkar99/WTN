@@ -2,6 +2,7 @@ $main-color: #293973;
 $nav-color: #40c7da;
 $text-colot: #FFFFFF;
 $weather-info-color:#00000080;
+$warning-color:#F44336;
 * {
     margin: 0;
     padding: 0;
@@ -88,10 +89,6 @@ body {
         justify-content: center;
         align-items: center;
         min-height: 70px;
-        &--place{
-            width: 100%;
-        }
-
     }
 }
 .form{
@@ -111,6 +108,17 @@ body {
         width: 100px;
         height: 20px;
     }
+}
+.warning{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    height: 200px;
+    color: $text-colot;
+    background-color: $warning-color;
+    font-size: 0.7em;
 }
 .hamburger{
     position: relative;

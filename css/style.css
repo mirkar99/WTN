@@ -93,9 +93,6 @@ body {
   align-items: center;
   min-height: 70px;
 }
-.weather-info__element--place {
-  width: 100%;
-}
 
 .form {
   display: flex;
@@ -114,6 +111,18 @@ body {
   cursor: pointer;
   width: 100px;
   height: 20px;
+}
+
+.warning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  height: 200px;
+  color: #FFFFFF;
+  background-color: #F44336;
+  font-size: 0.7em;
 }
 
 .hamburger {
