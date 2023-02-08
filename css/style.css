@@ -42,6 +42,11 @@ body {
 .nav-toggle__line--three {
   transform: rotate(-50deg);
 }
+@media (min-width: 350px) {
+  .nav-toggle {
+    left: 42.5px;
+  }
+}
 @media (min-width: 500px) {
   .nav-toggle {
     display: none;
@@ -69,12 +74,23 @@ body {
   background-color: #40c7da;
   border: none;
 }
+@media (min-width: 350px) {
+  .nav__button {
+    width: 100px;
+    height: 100px;
+  }
+}
 .nav__button:hover {
   transform: scale(1.2);
   transition: transform 0.5s;
 }
 .nav__button--weather {
   background-image: url(../img/Weather-icon.png);
+}
+@media (min-width: 350px) {
+  .nav {
+    width: 125px;
+  }
 }
 
 .section {
@@ -104,13 +120,19 @@ body {
 }
 .form__text {
   text-align: center;
-  width: 180px;
+  width: calc(100% - 50px);
   height: 25px;
 }
 .form__button {
   cursor: pointer;
-  width: 100px;
-  height: 20px;
+  width: calc(50% - 20px);
+  min-height: 20px;
+  word-wrap: break-word;
+}
+@media (min-width: 350px) {
+  .form__button {
+    width: 200px;
+  }
 }
 
 .warning {
@@ -119,10 +141,15 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  height: 200px;
+  min-height: 200px;
   color: #FFFFFF;
   background-color: #F44336;
   font-size: 0.7em;
+}
+@media (min-width: 350px) {
+  .warning {
+    font-size: 0.9em;
+  }
 }
 
 .hamburger {

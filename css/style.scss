@@ -44,6 +44,9 @@ body {
             transform: rotate(-50deg);
         }
     }
+    @media (min-width: 350px){
+        left: calc(calc(125px - 40px) /2);
+    }
     @media (min-width: 500px) {
             display: none; 
     }
@@ -67,6 +70,10 @@ body {
         background-size: cover;
         background-color: $nav-color;
         border: none;
+        @media (min-width:350px) {
+            width: 100px;
+            height: 100px;
+        }
         &:hover {
             transform: scale(1.2);
             transition: transform 0.5s;
@@ -74,6 +81,9 @@ body {
         &--weather {
             background-image: url(../img/Weather-icon.png);
         }
+    }
+    @media (min-width:350px) {
+        width: 125px;
     }
 }
 .section {
@@ -100,13 +110,17 @@ body {
     margin-top: 65px;
     &__text{
         text-align: center;
-        width: 180px;
+        width: calc(100% - 50px);
         height: 25px;
     }
     &__button{
         cursor: pointer;
-        width: 100px;
-        height: 20px;
+        width: calc(50% - 20px);
+        min-height: 20px;
+        word-wrap: break-word;
+        @media (min-width: 350px) {
+            width: 200px;
+        }
     }
 }
 .warning{
@@ -115,10 +129,13 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-    height: 200px;
+    min-height: 200px;
     color: $text-colot;
     background-color: $warning-color;
     font-size: 0.7em;
+    @media (min-width: 350px) {
+        font-size: 0.9em;
+    }
 }
 .hamburger{
     position: relative;
