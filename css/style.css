@@ -64,6 +64,7 @@ body {
   width: 100px;
   background-color: #40c7da;
   transition: transform 0.2s;
+  gap: 30px;
 }
 .nav__button {
   cursor: pointer;
@@ -87,6 +88,9 @@ body {
 .nav__button--weather {
   background-image: url(../img/Weather-icon.png);
 }
+.nav__button--timer {
+  background-image: url(../img/Timer-icon.png);
+}
 @media (min-width: 350px) {
   .nav {
     width: 125px;
@@ -96,6 +100,11 @@ body {
 .section {
   flex-grow: 1;
   background-color: #293973;
+}
+.section--timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .weather-info {
@@ -152,20 +161,63 @@ body {
   }
 }
 
+.timer {
+  color: #FFFFFF;
+}
+.timer__value {
+  font-size: 2em;
+}
+.timer__buttons {
+  display: flex;
+  justify-content: center;
+}
+.timer__buttons .button {
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 100%;
+  height: 45px;
+  width: 45px;
+  background-color: rgba(0, 0, 0, 0.5019607843);
+  color: #FFFFFF;
+}
+.timer__buttons .button--play {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.timer__buttons .button--play::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid white;
+  transform: rotate(90deg);
+  margin-left: 5px;
+}
+
 .hamburger {
   position: relative;
   transform: rotate(0deg);
 }
 
-.hidden {
+.hidden-nav {
   position: fixed;
   transform: translate(-100%);
 }
 @media (min-width: 500px) {
-  .hidden {
+  .hidden-nav {
     transform: translate(0);
     position: sticky;
   }
+}
+
+.hidden-section {
+  position: absolute;
+  visibility: hidden;
+  transform: scale(0);
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

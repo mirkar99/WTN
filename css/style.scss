@@ -1,7 +1,8 @@
 $main-color: #293973;
 $nav-color: #40c7da;
-$text-colot: #FFFFFF;
+$text-color: #FFFFFF;
 $weather-info-color:#00000080;
+$timer-button-color:#00000080;
 $warning-color:#F44336;
 * {
     margin: 0;
@@ -62,6 +63,7 @@ body {
     width: 100px;
     background-color: $nav-color;
     transition: transform 0.2s;
+    gap: 30px;
     &__button {
         cursor: pointer;
         width: 80px;
@@ -81,6 +83,9 @@ body {
         &--weather {
             background-image: url(../img/Weather-icon.png);
         }
+        &--timer {
+            background-image: url(../img/Timer-icon.png);
+        }
     }
     @media (min-width:350px) {
         width: 125px;
@@ -89,10 +94,15 @@ body {
 .section {
     flex-grow: 1;
     background-color: $main-color;
+    &--timer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 .weather-info{
     margin-top: 10px;
-    color: $text-colot;
+    color: $text-color;
     background-color: $weather-info-color;
     &__element{
         display: flex;
@@ -130,22 +140,64 @@ body {
     align-items: center;
     margin-top: 10px;
     min-height: 200px;
-    color: $text-colot;
+    color: $text-color;
     background-color: $warning-color;
     font-size: 0.7em;
     @media (min-width: 350px) {
         font-size: 0.9em;
     }
 }
+.timer{
+    color: $text-color;
+    &__value{
+        font-size: 2em;
+    }
+    &__buttons{
+        display: flex;
+        justify-content: center;
+        .button{
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 100%;
+            height: 45px;
+            width: 45px;
+            background-color: $timer-button-color;
+            color: $text-color;
+            &--play{
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                &::before{
+                    content: '';
+                    width: 0px;
+                    height: 0px;
+                    border-left: 15px solid transparent;
+                    border-right: 15px solid transparent;
+                    border-bottom: 25px solid white;
+                    transform: rotate(90deg);
+                    margin-left: 5px;
+                }
+            }
+        }
+       
+    }
+}
 .hamburger{
     position: relative;
     transform: rotate(0deg);
 }
-.hidden{
+.hidden-nav{
     position: fixed;
     transform: translate(-100%); 
     @media (min-width: 500px) {
         transform: translate(0); 
         position: sticky;
     }
+}
+.hidden-section{
+        position: absolute;
+        visibility: hidden;
+        transform: scale(0);
+        opacity: 0;
 }
