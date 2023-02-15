@@ -161,11 +161,12 @@ body {
   }
 }
 
-.timer {
-  color: #FFFFFF;
-}
 .timer__value {
-  font-size: 2em;
+  width: calc(75vw - 50px);
+  font-size: 1.5em;
+  background-color: #293973;
+  text-align: center;
+  color: #FFFFFF;
 }
 .timer__buttons {
   display: flex;

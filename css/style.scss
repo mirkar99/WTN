@@ -2,6 +2,7 @@ $main-color: #293973;
 $nav-color: #40c7da;
 $text-color: #FFFFFF;
 $weather-info-color:#00000080;
+$timer-value-color: #293973;
 $timer-button-color:#00000080;
 $warning-color:#F44336;
 * {
@@ -148,9 +149,12 @@ body {
     }
 }
 .timer{
-    color: $text-color;
-    &__value{
-        font-size: 2em;
+        &__value{
+        width: calc(75vw - 50px);
+        font-size: 1.5em;
+        background-color: $timer-value-color;
+        text-align: center;
+        color: $text-color;
     }
     &__buttons{
         display: flex;
