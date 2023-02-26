@@ -25,4 +25,5 @@ const changeSection = ()=>{
 }
 changeSection();
 weatherEventListner();
-timer.timerValueFormatChacker()
+timer.timerValueFormatChacker();
+timer.playButtonEventListener();
