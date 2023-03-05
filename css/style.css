@@ -197,6 +197,27 @@ body {
   transform: rotate(90deg);
   margin-left: 5px;
 }
+.timer__buttons .button--pause {
+  border: none;
+  position: relative;
+}
+.timer__buttons .button--pause::before, .timer__buttons .button--pause::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-125%, -50%);
+  width: 20%;
+  height: 60%;
+  background-color: white;
+}
+.timer__buttons .button--pause::before {
+  transform-origin: right;
+}
+.timer__buttons .button--pause::after {
+  transform-origin: left;
+  margin-left: 30%;
+}
 
 .hamburger {
   position: relative;

@@ -183,6 +183,29 @@ body {
                     margin-left: 5px;
                 }
             }
+            &--pause{
+                border: none;
+                position:relative;
+                &::before,
+                &::after {
+                  content: "";
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-125%, -50%);
+                  width: 20%;
+                  height: 60%;
+                  background-color: white;
+                }
+                &::before {
+                    transform-origin: right;
+                  }
+                  
+                &::after {
+                    transform-origin: left;
+                    margin-left: 30%;
+                  }
+            }
         }
        
     }
