@@ -27,3 +27,4 @@ changeSection();
 weatherEventListner();
 timer.timerValueFormatChacker();
 timer.playButtonEventListener();
+timer.pauseButtonEventListener();

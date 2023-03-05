@@ -1,10 +1,11 @@
 const timerValue = document.querySelector('.timer__value');
-const playButton = document.querySelector('.button--play');
+const button = document.querySelector('.button');
 
 let hIndex, mIndex, sIndex;
-let valueForUser='00h:00m:00s';
+let valueForUser = '00h:00m:00s';
+let clockDown;
 
-const timerIndexChecker=function(){
+const timerIndexChecker = function () {
     hIndex = [...timerValue.value].indexOf('h');
     mIndex = [...timerValue.value].indexOf('m');
     sIndex = [...timerValue.value].indexOf('s');
@@ -51,43 +52,61 @@ const countDown = function () {
     hoursArry = hoursArry.map(el => isNaN(el) ? 0 : el);
     minutesArry = minutesArry.map(el => isNaN(el) ? 0 : el);
     secondsArry = secondsArry.map(el => isNaN(el) ? 0 : el);
-    
+
     let hoursNumber = Number(hoursArry.join(''));
     let minutesNumber = Number(minutesArry.join(''));
     let secondsNumer = Number(secondsArry.join(''));
 
-    let timeInSecounds=0;
-    if(secondsNumer>0){
-        timeInSecounds += c;
+    let timeInSecounds = 0;
+    if (secondsNumer > 0) {
+        timeInSecounds += secondsNumer;
     }
-    if(minutesNumber>0){
+    if (minutesNumber > 0) {
         timeInSecounds += minutesNumber * 60;
     }
-    if(hoursNumber>0){
+    if (hoursNumber > 0) {
         timeInSecounds += hoursNumber * 3600;
         console.log(timeInSecounds)
     }
-    if(timeInSecounds>0){
-        let clockDown = setInterval(()=>{
-            timeInSecounds--
+    if (timeInSecounds > 0) {
+            clockDown = setInterval(() => {
+            timeInSecounds--;
             const hoursLeft = Math.floor(timeInSecounds / 3600);
             const minutesLeft = Math.floor((timeInSecounds % 3600) / 60);
             const remainingSeconds = timeInSecounds % 60;
-            valueForUser =`${hoursLeft}h:${minutesLeft}m:${remainingSeconds}s`
+            valueForUser = `${hoursLeft}h:${minutesLeft}m:${remainingSeconds}s`;
             timerValue.value = valueForUser
-            if(timeInSecounds==0){
+            if (timeInSecounds == 0) {
+                if (button.classList.contains('button--pause')) {
+                    button.classList.remove('button--pause');
+                    button.classList.add('button--play');
+                }
                 clearInterval(clockDown);
             }
-        },1000)
+        }, 1000)
     }
 }
 const playButtonEventListener = function () {
-    playButton.addEventListener('click', function () {
-        countDown();
-        console.log(valueForUser)
+    button.addEventListener('click', function (e) {
+        console.log(1)
+        if (button.classList.contains('button--play')) {
+            e.stopImmediatePropagation();
+            countDown();
+            button.classList.remove('button--play');
+            button.classList.add('button--pause');
+        }
+    })
+}
+const pauseButtonEventListener = function () {
+    button.addEventListener('click', function () {
+        console.log(1);
+        if (button.classList.contains('button--pause')) {
+            clearInterval(clockDown)
+            button.classList.remove('button--pause');
+            button.classList.add('button--play');
+        }
     })
 }
 
 
-
-export default { timerValueFormatChacker, playButtonEventListener };
+export default { timerValueFormatChacker, playButtonEventListener, pauseButtonEventListener };
