@@ -1,0 +1,45 @@
+.nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100px;
+    background-color: $nav-color;
+    transition: transform 0.2s;
+    gap: 30px;
+
+    &__button {
+        cursor: pointer;
+        width: 80px;
+        height: 80px;
+        background-position: center;
+        background-size: cover;
+        background-color: $nav-color;
+        border: none;
+
+        @media (min-width:350px) {
+            width: 100px;
+            height: 100px;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+            transition: transform 0.5s;
+        }
+
+        &--weather {
+            background-image: url(../img/Weather-icon.png);
+        }
+
+        &--timer {
+            background-image: url(../img/Timer-icon.png);
+        }
+    }
+
+    @media (min-width:350px) {
+        width: 125px;
+    }
+}
