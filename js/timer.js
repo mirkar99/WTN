@@ -66,14 +66,17 @@ const countDown = function () {
     }
     if (hoursNumber > 0) {
         timeInSecounds += hoursNumber * 3600;
-        console.log(timeInSecounds)
     }
     if (timeInSecounds > 0) {
-            clockDown = setInterval(() => {
+        clockDown = setInterval(() => {
             timeInSecounds--;
-            const hoursLeft = Math.floor(timeInSecounds / 3600);
-            const minutesLeft = Math.floor((timeInSecounds % 3600) / 60);
-            const remainingSeconds = timeInSecounds % 60;
+            let hoursLeft = Math.floor(timeInSecounds / 3600);
+            let minutesLeft = Math.floor((timeInSecounds % 3600) / 60);
+            let remainingSeconds = timeInSecounds % 60;
+            hoursLeft = hoursLeft < 10 ? `0${hoursLeft}` : hoursLeft;
+            minutesLeft = minutesLeft < 10 ? `0${minutesLeft}` : minutesLeft;
+            remainingSeconds = remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
+
             valueForUser = `${hoursLeft}h:${minutesLeft}m:${remainingSeconds}s`;
             timerValue.value = valueForUser
             if (timeInSecounds == 0) {
@@ -88,7 +91,6 @@ const countDown = function () {
 }
 const playButtonEventListener = function () {
     button.addEventListener('click', function (e) {
-        console.log(1)
         if (button.classList.contains('button--play')) {
             e.stopImmediatePropagation();
             countDown();
@@ -99,7 +101,6 @@ const playButtonEventListener = function () {
 }
 const pauseButtonEventListener = function () {
     button.addEventListener('click', function () {
-        console.log(1);
         if (button.classList.contains('button--pause')) {
             clearInterval(clockDown)
             button.classList.remove('button--pause');
