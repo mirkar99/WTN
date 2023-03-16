@@ -51,8 +51,4 @@
             width: 180px;
         }
     }
-
-    @media screen and (max-width:350px) {
-        width: calc(100vw - 125px);
-    }
 }
