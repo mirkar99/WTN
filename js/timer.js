@@ -101,10 +101,10 @@ const playButtonEventListener = function () {
 }
 const pauseButtonEventListener = function () {
     button.addEventListener('click', function () {
-        if (button.classList.contains('button--pause')) {
+        if (button.classList.contains('section-timer__button--pause')) {
             clearInterval(clockDown)
-            button.classList.remove('button--pause');
-            button.classList.add('button--play');
+            button.classList.remove('section-timer__button--pause');
+            button.classList.add('section-timer__button--play');
         }
     })
 }
