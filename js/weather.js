@@ -1,6 +1,6 @@
-const weatherSection = document.querySelector('.section--weather');
-const weatherText = document.querySelector('.form__text');
-const weatherBtn = document.querySelector('.form__button');
+const weatherSection = document.querySelector('.section-weather');
+const weatherText = document.querySelector('.section-weather__text');
+const weatherBtn = document.querySelector('.section-weather__button');
 
 const weatherLocaton = [];
 

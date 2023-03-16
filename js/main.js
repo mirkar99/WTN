@@ -2,7 +2,7 @@ import weatherEventListner from "./weather.js";
 import timer from "./timer.js"
 const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
-const section = document.querySelectorAll('.section');
+const section = document.querySelectorAll('section');
 
 
 navToggle.addEventListener('click',()=>{

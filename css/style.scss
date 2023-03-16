@@ -20,18 +20,12 @@ body {
     overflow-x: hidden;
 }
 
-.section {
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
     background-color: $main-color;
-
-    &--timer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 }
 
 @import 'partials/nav-toggle.scss';

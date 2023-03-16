@@ -1,5 +1,5 @@
-const timerValue = document.querySelector('.timer__value');
-const button = document.querySelector('.button');
+const timerValue = document.querySelector('.section-timer__value');
+const button = document.querySelector('.section-timer__button');
 
 let hIndex, mIndex, sIndex;
 let valueForUser = '00h:00m:00s';
@@ -80,9 +80,9 @@ const countDown = function () {
             valueForUser = `${hoursLeft}h:${minutesLeft}m:${remainingSeconds}s`;
             timerValue.value = valueForUser
             if (timeInSecounds == 0) {
-                if (button.classList.contains('button--pause')) {
-                    button.classList.remove('button--pause');
-                    button.classList.add('button--play');
+                if (button.classList.contains('section-timer__button--pause')) {
+                    button.classList.remove('section-timer__button--pause');
+                    button.classList.add('section-timer__button--play');
                 }
                 clearInterval(clockDown);
             }
@@ -91,11 +91,11 @@ const countDown = function () {
 }
 const playButtonEventListener = function () {
     button.addEventListener('click', function (e) {
-        if (button.classList.contains('button--play')) {
+        if (button.classList.contains('section-timer__button--play')) {
             e.stopImmediatePropagation();
             countDown();
-            button.classList.remove('button--play');
-            button.classList.add('button--pause');
+            button.classList.remove('section-timer__button--play');
+            button.classList.add('section-timer__button--pause');
         }
     })
 }

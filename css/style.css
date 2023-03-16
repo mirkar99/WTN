@@ -12,17 +12,12 @@ body {
   overflow-x: hidden;
 }
 
-.section {
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
   background-color: #293973;
-}
-.section--timer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .nav-toggle {
@@ -99,6 +94,12 @@ body {
     height: 100px;
   }
 }
+@media (max-height: 350px) {
+  .nav__button {
+    width: 50px;
+    height: 50px;
+  }
+}
 .nav__button:hover {
   transform: scale(1.2);
   transition: transform 0.5s;
@@ -109,9 +110,43 @@ body {
 .nav__button--timer {
   background-image: url(../img/Timer-icon.png);
 }
+.nav__button--notebook {
+  background-image: url(../img/NoteBook-icon.png);
+}
 @media (min-width: 350px) {
   .nav {
     width: 125px;
+  }
+}
+
+.section-weather__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - 125px);
+  gap: 5px;
+  margin-top: 65px;
+}
+.section-weather__text {
+  text-align: center;
+  width: calc(100% - 20px);
+  height: 25px;
+}
+@media screen and (min-width: 350px) {
+  .section-weather__text {
+    width: calc(100% - 30px);
+  }
+}
+.section-weather__button {
+  cursor: pointer;
+  width: calc(65% - 10px);
+  min-height: 20px;
+  word-wrap: break-word;
+}
+@media (min-width: 350px) {
+  .section-weather__button {
+    width: 180px;
   }
 }
 
@@ -140,43 +175,12 @@ body {
   }
 }
 
-.form {
+.section-timer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: calc(100vw - 125px);
-  gap: 5px;
-  margin-top: 65px;
+  justify-content: center;
 }
-.form__text {
-  text-align: center;
-  width: calc(100% - 20px);
-  height: 25px;
-}
-@media screen and (min-width: 350px) {
-  .form__text {
-    width: calc(100% - 30px);
-  }
-}
-.form__button {
-  cursor: pointer;
-  width: calc(65% - 10px);
-  min-height: 20px;
-  word-wrap: break-word;
-}
-@media (min-width: 350px) {
-  .form__button {
-    width: 180px;
-  }
-}
-@media screen and (max-width: 350px) {
-  .form {
-    width: calc(100vw - 125px);
-  }
-}
-
-.timer__value {
+.section-timer__value {
   width: calc(75vw - 50px);
   font-size: 1em;
   background-color: #293973;
@@ -184,15 +188,15 @@ body {
   color: #FFFFFF;
 }
 @media screen and (min-width: 350px) {
-  .timer__value {
+  .section-timer__value {
     font-size: 2em;
   }
 }
-.timer__buttons {
+.section-timer__buttons {
   display: flex;
   justify-content: center;
 }
-.timer__buttons .button {
+.section-timer__button {
   cursor: pointer;
   margin-top: 10px;
   border-radius: 100%;
@@ -201,13 +205,13 @@ body {
   background-color: rgba(0, 0, 0, 0.5019607843);
   color: #FFFFFF;
 }
-.timer__buttons .button--play {
+.section-timer__button--play {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.timer__buttons .button--play::before {
+.section-timer__button--play::before {
   content: "";
   width: 0px;
   height: 0px;
@@ -217,11 +221,11 @@ body {
   transform: rotate(90deg);
   margin-left: 5px;
 }
-.timer__buttons .button--pause {
+.section-timer__button--pause {
   border: none;
   position: relative;
 }
-.timer__buttons .button--pause::before, .timer__buttons .button--pause::after {
+.section-timer__button--pause::before, .section-timer__button--pause::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -231,10 +235,10 @@ body {
   height: 60%;
   background-color: white;
 }
-.timer__buttons .button--pause::before {
+.section-timer__button--pause::before {
   transform-origin: right;
 }
-.timer__buttons .button--pause::after {
+.section-timer__button--pause::after {
   transform-origin: left;
   margin-left: 30%;
 }
