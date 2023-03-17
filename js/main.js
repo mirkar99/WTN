@@ -1,5 +1,6 @@
 import weatherEventListner from "./weather.js";
 import timer from "./timer.js"
+import notebook from "./notebook.js"
 const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
 const section = document.querySelectorAll('section');
@@ -15,10 +16,17 @@ const changeSection = ()=>{
             if(el.classList.contains('nav__button--weather')){
                 section[0].classList.remove('hidden-section');
                 section[1].classList.add('hidden-section');
+                section[2].classList.add('hidden-section');
             }
             if(el.classList.contains('nav__button--timer')){
-                section[1].classList.remove('hidden-section');
                 section[0].classList.add('hidden-section');
+                section[1].classList.remove('hidden-section');
+                section[2].classList.add('hidden-section');
+            }
+            if(el.classList.contains('nav__button--notebook')){
+                section[0].classList.add('hidden-section');
+                section[1].classList.add('hidden-section');
+                section[2].classList.remove('hidden-section');
             }
         })
     })
@@ -28,3 +36,4 @@ weatherEventListner();
 timer.timerValueFormatChacker();
 timer.playButtonEventListener();
 timer.pauseButtonEventListener();
+notebook.buttonEventListener();
