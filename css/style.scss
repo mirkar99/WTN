@@ -4,6 +4,7 @@ $text-color: #FFFFFF;
 $weather-info-color: #00000080;
 $timer-value-color: #293973;
 $timer-button-color: #00000080;
+$notebook-savedText-bgColor:#00000080;
 $warning-color: #F44336;
 
 * {
@@ -33,6 +34,7 @@ section {
 
 @import 'partials/section-weather.scss';
 @import 'partials/section-timer.scss';
+@import 'partials/section-notebook.scss';
 
 .warning {
     width: calc(100vw - 125px);
