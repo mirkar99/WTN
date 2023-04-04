@@ -6,7 +6,7 @@ const weatherLocaton = [];
 
 const api_key = '0809c3f0959e4799961175944232301';
 const getWeather = function (town) {
-    return fetch(`http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${town}&aqi=no`)
+    return fetch(`https://api.weatherapi.com/v1/current.json?key=${api_key}&q=${town}&aqi=no`)
         .then(res => res.json())
         .then(data => data)
 }
