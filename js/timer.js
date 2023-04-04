@@ -94,8 +94,10 @@ const playButtonEventListener = function () {
         if (button.classList.contains('section-timer__button--play')) {
             e.stopImmediatePropagation();
             countDown();
-            button.classList.remove('section-timer__button--play');
-            button.classList.add('section-timer__button--pause');
+            if(timerValue.value!='00h:00m:00s'){
+                button.classList.remove('section-timer__button--play');
+                button.classList.add('section-timer__button--pause');
+            }
         }
     })
 }
