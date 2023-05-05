@@ -73,5 +73,34 @@
             }
         }
     }
+    .timer-EndInfo{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        width: 50%;
+        height: 100%;
+        background-color: $timer-EndInfo-BgColor;
+        gap:15px;
+        &__text{
+            text-align: center;
+            font-size: 1em;
+            color: $text-color;
+    
+            @media screen and (min-width:350px) {
+                font-size: 2em;
+            }
+        }
+        &__button{
+            cursor: pointer;
+            height: 50px;
+            width: 50%;
+        }
+        @media screen and (min-width:350px) {
+            width: 55%;
+        }
+    }
 
 }

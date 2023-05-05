@@ -242,6 +242,38 @@ section {
   transform-origin: left;
   margin-left: 30%;
 }
+.section-timer .timer-EndInfo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  width: 50%;
+  height: 100%;
+  background-color: #293973;
+  gap: 15px;
+}
+.section-timer .timer-EndInfo__text {
+  text-align: center;
+  font-size: 1em;
+  color: #FFFFFF;
+}
+@media screen and (min-width: 350px) {
+  .section-timer .timer-EndInfo__text {
+    font-size: 2em;
+  }
+}
+.section-timer .timer-EndInfo__button {
+  cursor: pointer;
+  height: 50px;
+  width: 50%;
+}
+@media screen and (min-width: 350px) {
+  .section-timer .timer-EndInfo {
+    width: 55%;
+  }
+}
 
 .section-notebook__textarea {
   margin-top: 65px;
