@@ -5,10 +5,33 @@ let hIndex, mIndex, sIndex;
 let valueForUser = '00h:00m:00s';
 let clockDown;
 
+const audioEffect = new Audio('./audio/alarm_sound_effect.mp3');
+
 const timerIndexChecker = function () {
     hIndex = [...timerValue.value].indexOf('h');
     mIndex = [...timerValue.value].indexOf('m');
     sIndex = [...timerValue.value].indexOf('s');
+}
+const createElement = function(){
+    const div = document.createElement('div');
+    const text = document.createElement('p');
+    const button = document.createElement('button');
+
+    div.classList.add('timer-EndInfo');
+    text.classList.add('timer-EndInfo__text');
+    button.classList.add('timer-EndInfo__button');
+    text.innerHTML ='It is done';
+    button.innerHTML ='Ok';
+    div.appendChild(text);
+    div.appendChild(button);
+
+    document.querySelector('.section-timer').appendChild(div)
+    button.addEventListener('click',()=>{
+        audioEffect.pause();
+        audioEffect.loop = false;
+        div.remove();
+    })
+    
 }
 const timerValueFormatChacker = function () {
     timerValue.addEventListener('keyup', function () {
@@ -85,6 +108,10 @@ const countDown = function () {
                     button.classList.add('section-timer__button--play');
                 }
                 clearInterval(clockDown);
+                createElement()
+                audioEffect.play();
+                audioEffect.loop = true
+        
             }
         }, 1000)
     }
